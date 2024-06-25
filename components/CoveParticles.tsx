@@ -39,10 +39,10 @@ const CoverParticles = () => {
                         },
                         modes: {
                             push: {
-                                quantity: 4,
+                                quantity: 1,
                             },
                             repulse: {
-                                distance: 200,
+                                distance: 300,
                                 duration: 0.4,
                             },
                         },
@@ -53,9 +53,9 @@ const CoverParticles = () => {
                         },
                         links: {
                             color: "#ffffff",
-                            distance: 150,
+                            distance: 180,
                             enable: true,
-                            opacity: 0.5,
+                            opacity: 0.1,
                             width: 1,
                         },
                         move: {

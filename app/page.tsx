@@ -1,12 +1,16 @@
-import CoverParticles from "./components/coveParticles";
+import CoverParticles from "@/components/CoveParticles";
+import Introduction from "@/components/Intruduction";
+import TransitionPage from "@/components/TransitionPage";
 
 
 export default function Home() {
   return (
     <main>
+      <TransitionPage />
       <div className="min-h-screen h-full flex bg-no-repeat bg-gradient-cover">
         <CoverParticles />
-        <p>Sergio</p>
+        <Introduction />
+
       </div>
     </main>
   );

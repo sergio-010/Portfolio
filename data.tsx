@@ -1,4 +1,4 @@
-import { BookText, CodeSquare, HomeIcon, UserRound, Linkedin, Twitter, Rss, Twitch, Youtube, Crop, Pencil, Computer, Book, Rocket, Speech } from "lucide-react";
+import { BookText, CodeSquare, HomeIcon, UserRound, Linkedin, Twitter, Rss, Twitch, Youtube, Crop, Pencil, Computer, Book, Rocket, Speech, Facebook, Instagram, LinkedinIcon } from "lucide-react";
 import { ReactElement } from "react";
 
 interface SocialNetwork {
@@ -54,12 +54,12 @@ interface TestimonialData {
 export const socialNetworks: SocialNetwork[] = [
     {
         id: 1,
-        logo: <Youtube size={30} strokeWidth={1} />,
+        logo: <Facebook size={30} strokeWidth={1} />,
         src: "#!",
     },
     {
         id: 2,
-        logo: <Linkedin size={30} strokeWidth={1} />,
+        logo: <LinkedinIcon size={30} strokeWidth={1} />,
         src: "#!",
     },
     {
@@ -69,14 +69,10 @@ export const socialNetworks: SocialNetwork[] = [
     },
     {
         id: 4,
-        logo: <Rss size={30} strokeWidth={1} />,
+        logo: <Instagram size={30} strokeWidth={1} />,
         src: "#!",
     },
-    {
-        id: 5,
-        logo: <Twitch size={30} strokeWidth={1} />,
-        src: "#!",
-    },
+
 ];
 
 
