@@ -7,7 +7,7 @@ const TransitionPage = () => {
             <div>
                 <motion.div
                     className="w-screen fixed top-0 bottom-0 right-full 
-                    z-30 bg-blue-600/30 " variants={trasitionsVariantsPage}
+                    z-30 bg-white/30 " variants={trasitionsVariantsPage}
                     initial="initial"
                     animate="animate"
                     exit="exit"

@@ -1,14 +1,14 @@
 'use client'
 import { usePathname } from 'next/navigation';
-
 import { itemsNavbar } from '../data';
-
 import TrasitionComponent from './TrasitionComponent';
+
+
 
 const NavBar = () => {
     const router = usePathname();
     return (
-        <TrasitionComponent position="bottom" className="w-full mt-auto h-max fixed z-40 flex flex-col
+        <TrasitionComponent position="right" className="w-full mt-auto h-max fixed z-40 flex flex-col
          items-center justify-center bottom-10">
             <nav>
                 <div className="flex items-center justify-center gap-2 px-4 py-1 rounded-full cursor-pointer bg-white/15 background-blur-sm">
