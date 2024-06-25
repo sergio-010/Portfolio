@@ -1,6 +1,57 @@
 import { BookText, CodeSquare, HomeIcon, UserRound, Linkedin, Twitter, Rss, Twitch, Youtube, Crop, Pencil, Computer, Book, Rocket, Speech } from "lucide-react";
+import { ReactElement } from "react";
 
-export const socialNetworks = [
+interface SocialNetwork {
+    id: number;
+    logo: ReactElement;
+    src: string;
+}
+
+interface NavbarItem {
+    id: number;
+    title: string;
+    icon: ReactElement;
+    link: string;
+}
+
+interface AboutPageData {
+    id: number;
+    title: string;
+    subtitle: string;
+    description: string;
+    date: string;
+}
+
+interface CounterData {
+    id: number;
+    endCounter: number;
+    text: string;
+    lineRight: boolean;
+    lineRightMobile: boolean;
+}
+
+interface ServiceData {
+    icon: ReactElement;
+    title: string;
+    description: string;
+}
+
+interface PortfolioData {
+    id: number;
+    title: string;
+    image: string;
+    urlGithub: string;
+    urlDemo: string;
+}
+
+interface TestimonialData {
+    id: number;
+    name: string;
+    description: string;
+    imageUrl: string;
+}
+
+export const socialNetworks: SocialNetwork[] = [
     {
         id: 1,
         logo: <Youtube size={30} strokeWidth={1} />,
@@ -29,7 +80,7 @@ export const socialNetworks = [
 ];
 
 
-export const itemsNavbar = [
+export const itemsNavbar: NavbarItem[] = [
     {
         id: 1,
         title: "Home",
@@ -62,7 +113,7 @@ export const itemsNavbar = [
     },
 ];
 
-export const dataAboutPage = [
+export const dataAboutPage: AboutPageData[] = [
     {
         id: 1,
         title: "Frontend Developer",
@@ -93,7 +144,7 @@ export const dataAboutPage = [
     },
 ]
 
-export const dataCounter = [
+export const dataCounter: CounterData[] = [
     {
         id: 0,
         endCounter: 10,
@@ -124,7 +175,7 @@ export const dataCounter = [
     },
 ];
 
-export const serviceData = [
+export const serviceData: ServiceData[] = [
     {
         icon: <Crop />,
         title: "Branding",
@@ -152,7 +203,7 @@ export const serviceData = [
     },
 ];
 
-export const dataPortfolio = [
+export const dataPortfolio: PortfolioData[] = [
     {
         id: 1,
         title: "Web Pro",
@@ -211,7 +262,7 @@ export const dataPortfolio = [
     }
 ];
 
-export const dataTestimonials = [
+export const dataTestimonials: TestimonialData[] = [
     {
         id: 1,
         name: "George Snow",
