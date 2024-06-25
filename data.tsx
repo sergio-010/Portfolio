@@ -1,4 +1,4 @@
-import { BookText, CodeSquare, HomeIcon, UserRound, Linkedin, Twitter, Rss, Twitch, Youtube, Crop, Pencil, Computer, Book, Rocket, Speech, Facebook, Instagram, LinkedinIcon } from "lucide-react";
+import { BookText, CodeSquare, HomeIcon, UserRound, Linkedin, Twitter, Rss, Twitch, Youtube, Crop, Pencil, Computer, Book, Rocket, Speech, Facebook, Instagram, LinkedinIcon, Github, Phone, PhoneCall, MessageCircle, MessageCircleCode } from "lucide-react";
 import { ReactElement } from "react";
 
 interface SocialNetwork {
@@ -69,8 +69,8 @@ export const socialNetworks: SocialNetwork[] = [
     },
     {
         id: 4,
-        logo: <Instagram size={30} strokeWidth={1} />,
-        src: "#!",
+        logo: <Github size={30} strokeWidth={1} />,
+        src: "https://github.com/sergio-010",
     },
 
 ];
@@ -99,7 +99,7 @@ export const itemsNavbar: NavbarItem[] = [
     {
         id: 5,
         title: "Home",
-        icon: <Speech size={25} color="#fff" strokeWidth={1} />,
+        icon: <MessageCircleCode size={25} color="#fff" strokeWidth={1} />,
         link: "/testimonials",
     },
 ];
