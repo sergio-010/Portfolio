@@ -11,9 +11,9 @@ const PageAboutMe = () => {
         <>
             <TransitionPage />
             <CointanerPage  >
-                <h1 className="text-4xl font-bold leading-tight text-center md:text-left md:mt-10">
+                <h1 className="text-4xl font-bold leading-tight text-center  md:mt-10">
                     My
-                    <span className="text-blue-600"> trayectory</span>
+                    <span className="text-blue-600"> career</span>
                 </h1>
                 <CounterServices />
                 <TimeLine />

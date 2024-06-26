@@ -1,4 +1,4 @@
-import { BookText, CodeSquare, HomeIcon, UserRound, Linkedin, Twitter, Rss, Twitch, Youtube, Crop, Pencil, Computer, Book, Rocket, Speech, Facebook, Instagram, LinkedinIcon, Github, Phone, PhoneCall, MessageCircle, MessageCircleCode } from "lucide-react";
+import { BookText, CodeSquare, HomeIcon, UserRound, Linkedin, Twitter, Rss, Twitch, Youtube, Crop, Pencil, Computer, Book, Rocket, Speech, Facebook, Instagram, LinkedinIcon, Github, Phone, PhoneCall, MessageCircle, MessageCircleCode, MailCheck } from "lucide-react";
 import { ReactElement } from "react";
 
 interface SocialNetwork {
@@ -45,20 +45,11 @@ interface PortfolioData {
 }
 
 export const socialNetworks: SocialNetwork[] = [
-    {
-        id: 1,
-        logo: <Facebook size={30} strokeWidth={1} />,
-        src: "#!",
-    },
+
     {
         id: 2,
         logo: <LinkedinIcon size={30} strokeWidth={1} />,
-        src: "#!",
-    },
-    {
-        id: 3,
-        logo: <Twitter size={30} strokeWidth={1} />,
-        src: "#!",
+        src: "https://www.linkedin.com/in/sergio-picon/",
     },
     {
         id: 4,
@@ -93,30 +84,30 @@ export const itemsNavbar: NavbarItem[] = [
         id: 5,
         title: "Home",
         icon: <MessageCircleCode size={25} color="#fff" strokeWidth={1} />,
-        link: "/contac-me",
+        link: "/contact-me",
     },
 ];
 
 export const dataAboutPage: AboutPageData[] = [
     {
         id: 2,
-        title: "Docente de Informatica",
+        title: "Computer Science Teacher",
         subtitle: "Colegio Rafael Pombo",
-        description: "Actualmente soy docente de Tecnología e Informática en el Colegio Superior Rafael Pombo.",
+        description: "I am currently a teacher of Technology and Computer Science at the Colegio Rafael Pombo .",
         date: "Abr 2024",
     },
     {
         id: 3,
-        title: "Graduacion Ingeniero de Sistemas",
+        title: "Systems Engineer Graduation",
         subtitle: "UNISANGIL",
-        description: "Graduado en Ingeniería de Sistemas por la Universidad Unisangil.",
+        description: "Graduated in Systems Engineering from Unisangil University.",
         date: "Abr 2024 ",
     },
     {
         id: 4,
-        title: "Desarrollador Frontend",
+        title: "Frontend Developer",
         subtitle: "Ant Pack",
-        description: "Trabajé como desarrollador frontend en Ant Pack, donde utilicé React y Next.js para crear aplicaciones web eficientes y escalables.",
+        description: "I worked as a frontend developer at Ant Pack, where I used React and Next.js to build efficient and scalable web applications.",
         date: "Oct 2023",
     },
 ]
@@ -125,21 +116,21 @@ export const dataCounter: CounterData[] = [
     {
         id: 0,
         endCounter: 6,
-        text: "Meses de experiencia",
+        text: "Months of experience",
         lineRight: true,
         lineRightMobile: true,
     },
     {
         id: 1,
         endCounter: 4,
-        text: "Clientes satisfechos",
+        text: "Satisfied customers",
         lineRight: true,
         lineRightMobile: false,
     },
     {
         id: 2,
         endCounter: 8,
-        text: "Proyectos finalizados",
+        text: "Completed projects",
         lineRight: true,
         lineRightMobile: false,
     },
@@ -177,59 +168,81 @@ export const serviceData: ServiceData[] = [
 export const dataPortfolio: PortfolioData[] = [
     {
         id: 1,
-        title: "Portfolio",
-        image: "/image-1.jpg",
-        urlGithub: "#!",
-        urlDemo: "#!",
+        title: "Todo-List",
+        image: "/todo.png",
+        urlGithub: "https://github.com/sergio-010/Todo-List",
+        urlDemo: "https://todo-list-neon-ten.vercel.app/",
     },
     {
         id: 2,
         title: "Portfolio",
-        image: "/image-2.jpg",
-        urlGithub: "#!",
+        image: "/porfolio.png",
+        urlGithub: "https://github.com/sergio-010/Portfolio",
         urlDemo: "#!",
     },
     {
         id: 3,
         title: "Portfolio",
-        image: "/image-3.jpg",
+        image: "/devv.jpg",
         urlGithub: "#!",
         urlDemo: "#!",
     },
     {
         id: 4,
         title: "Portfolio",
-        image: "/image-4.jpg",
+        image: "/devv.jpg",
         urlGithub: "#!",
         urlDemo: "#!",
     },
     {
         id: 5,
         title: "Portfolio",
-        image: "/image-5.jpg",
+        image: "/devv.jpg",
         urlGithub: "#!",
         urlDemo: "#!",
     },
     {
         id: 6,
         title: "Portfolio",
-        image: "/image-6.jpg",
+        image: "/devv.jpg",
         urlGithub: "#!",
         urlDemo: "#!",
     },
     {
         id: 7,
         title: "Portfolio",
-        image: "/image-7.jpg",
+        image: "/devv.jpg",
         urlGithub: "#!",
         urlDemo: "#!",
     },
     {
         id: 8,
         title: "Portfolio",
-        image: "/image-8.jpg",
+        image: "/devv.jpg",
         urlGithub: "#!",
         urlDemo: "#!",
     }
 ];
-
+export const dataContact = [
+    {
+        id: 1,
+        title: "Telephone",
+        subtitle: "+57 320 34 39 111",
+        link: "https://api.whatsapp.com/send?phone=573203439111&text=Holaaaa",
+        icon: <Phone />,
+    },
+    {
+        id: 2,
+        title: "Github",
+        subtitle: "github.com/sergio-010",
+        link: "https://github.com/sergio-010",
+        icon: <Github />,
+    },
+    {
+        id: 3,
+        title: "Email",
+        subtitle: "piconsergio010@gmail",
+        link: "piconsergio010@gmail.com",
+        icon: <MailCheck />,
+    },
+];

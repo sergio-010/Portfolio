@@ -1,4 +1,4 @@
-import CoverParticles from "@/components/CoveParticles";
+
 import Introduction from "@/components/Intruduction";
 import TransitionPage from "@/components/TransitionPage";
 
