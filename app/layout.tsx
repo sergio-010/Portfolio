@@ -5,6 +5,7 @@ import NavBar from "../components/NavBar";
 import Header from "@/components/Header";
 import CoverParticles from "@/components/CoveParticles";
 
+
 const urbanist = Urbanist({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -19,6 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="favicon.png" />
+      </head>
       <body className={urbanist.className}>
         <NavBar />
         <Header />
