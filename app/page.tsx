@@ -8,7 +8,6 @@ export default function Home() {
     <main>
       <TransitionPage />
       <div className="min-h-screen h-full flex">
-        <CoverParticles />
         <Introduction />
       </div>
     </main>
