@@ -9,7 +9,7 @@ const PorfolioPage = () => {
             <TransitionPage />
             <div className=" flex flex-col justify-center  ">
                 <h1 className="text-2xl font-bold leading-tight text-center md:text-4xl md:mb-5">My <span className="text-blue-600 font-bold">Projects</span></h1>
-                <div className="max-w-5xl relative grid gap-6 mx-auto mt-4 md:grid-cols-4 z-10 ">
+                <div className="max-w-5xl relative grid gap-6 mx-auto mt-4 md:grid-cols-4 z-10 mb-40 md:mb-0 ">
                     {dataPortfolio.map((data) => (
                         <PortfolioBox key={data.id} data={data} />
                     ))

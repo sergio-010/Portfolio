@@ -3,7 +3,7 @@ import TrasitionComponent from "./TrasitionComponent";
 
 const Header = () => {
     return (
-        <TrasitionComponent position="right" className="w-full inline-block pt-9 px-20" >
+        <TrasitionComponent position="right" className="w-full h-full inline-block pt-9 px-20" >
             <header>
                 <div className="max-w-6xl mx-auto container justify-between md:flex">
                     <a href="/">
