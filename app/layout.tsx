@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="favicon.png" />
+        <link rel="icon" href="favi.png" />
       </head>
       <body className={urbanist.className}>
         <NavBar />
