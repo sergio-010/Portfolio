@@ -41,7 +41,7 @@ const FormContact = () => {
                 value="Send"
                 className="w-[200px] mx-auto mt-4 py-2 rounded-lg shadow border border-blue-600 cursor-pointer hover:shadow-lg hover:shadow-blue-600/50 text-white mb-40 md:mb-0"
             />
-            <input type="hidden" name="_next" value="http://localhost:3000/" />
+            <input type="hidden" name="_next" value="https://sergio-picon.vercel.app/" />
             <input type="hidden" name="_captcha" value="false" />
         </form>
     );
