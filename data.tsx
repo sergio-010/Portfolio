@@ -182,10 +182,10 @@ export const dataPortfolio: PortfolioData[] = [
     },
     {
         id: 3,
-        title: "Portfolio",
-        image: "/devv.jpg",
-        urlGithub: "#!",
-        urlDemo: "#!",
+        title: "Ecommerce",
+        image: "/ecommerce.png",
+        urlGithub: "https://github.com/sergio-010/ecommerce-beer",
+        urlDemo: "https://github.com/sergio-010/backend-ecommerce",
     },
     {
         id: 4,
