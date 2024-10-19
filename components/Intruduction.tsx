@@ -19,7 +19,7 @@ const Introduction = () => {
 
                     </p>
                     <div className="flex items-center justify-center gap-1 md:justify-start md:gap-5">
-                        <a href="/Hoja.pdf" download="cv" className="px-3 py-2 transition-all duration-300 cursor-pointer
+                        <a href="/CV-Picon Sergio Andres.pdf" download="cv" className="px-3 py-2 transition-all duration-300 cursor-pointer
                          text-md rounded-xl hover:shadow-lg border border-blue-600 hover:shadow-blue-600/50">Download cv</a>
                         <a href="/contact-me" className="px-3 py-2 transition-all duration-300 cursor-pointer
                          text-md rounded-xl hover:shadow-lg border border-blue-600 hover:shadow-blue-600/50">Contact me</a>
