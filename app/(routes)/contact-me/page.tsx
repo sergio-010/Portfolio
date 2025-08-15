@@ -8,7 +8,7 @@ const ContactMePage = () => {
             <div className="pt-20 pb-16">
                 <div className="text-center mb-16">
                     <h1 className="text-minimal-3xl md:text-minimal-4xl font-light text-minimal-text tracking-wide mb-4">
-                        Let's Work Together
+                        Let&apos;s Work Together
                     </h1>
                     <div className="w-16 h-px bg-minimal-text mx-auto"></div>
                 </div>
