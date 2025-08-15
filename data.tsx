@@ -107,7 +107,7 @@ export const dataAboutPage: AboutPageData[] = [
     },
     {
         id: 2,
-        title: "Profesor de Informática", 
+        title: "Profesor de Informática",
         subtitle: "Colegio Rafael Pombo",
         description: "Actualmente soy profesor de Tecnología e Informática, desarrollando habilidades pedagógicas y compartiendo conocimientos en tecnología con estudiantes.",
         date: "2024 - Presente",

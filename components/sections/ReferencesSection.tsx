@@ -11,7 +11,7 @@ const ReferencesSection = () => {
         },
         {
             id: 2,
-            name: "Jennifer Garrido", 
+            name: "Jennifer Garrido",
             phone: "(57) 3214740140",
             icon: <User className="w-5 h-5" />
         }

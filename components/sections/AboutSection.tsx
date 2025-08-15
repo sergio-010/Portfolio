@@ -24,19 +24,19 @@ const AboutSection = () => {
                             <div className="bg-white/5 backdrop-blur-xl border border-yellow-600/20 rounded-lg p-12 hover:scale-[1.02] transition-all duration-300">
                                 <div className="space-y-8">
                                     <p className="text-lg text-white/90 leading-relaxed">
-                                        Soy Sergio Andrés Picón, Ingeniero de Sistemas graduado de la Fundación Universitaria UNISANGIL 
+                                        Soy Sergio Andrés Picón, Ingeniero de Sistemas graduado de la Fundación Universitaria UNISANGIL
                                         con experiencia en diseño y desarrollo de sistemas utilizando tecnologías como React y Next.js.
                                     </p>
 
                                     <p className="text-base text-white/80 leading-relaxed">
-                                        Desarrollador frontend con habilidades para crear interfaces de usuario eficientes y escalables, 
-                                        y una sólida comprensión de principios de desarrollo web moderno. Actualmente me desempeño como 
+                                        Desarrollador frontend con habilidades para crear interfaces de usuario eficientes y escalables,
+                                        y una sólida comprensión de principios de desarrollo web moderno. Actualmente me desempeño como
                                         profesor de Tecnología e Informática.
                                     </p>
 
                                     <p className="text-base text-white/80 leading-relaxed">
-                                        Mi experiencia incluye el desarrollo de componentes reutilizables con React, implementación de 
-                                        funcionalidades interactivas, y optimización de rendimiento. Me enfoco en crear soluciones 
+                                        Mi experiencia incluye el desarrollo de componentes reutilizables con React, implementación de
+                                        funcionalidades interactivas, y optimización de rendimiento. Me enfoco en crear soluciones
                                         web modernas que combinen funcionalidad con excelencia estética.
                                     </p>
                                 </div>

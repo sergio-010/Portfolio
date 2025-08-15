@@ -12,7 +12,7 @@ const NavBar = () => {
         const handleScroll = () => {
             const sections = ['home', 'about', 'education', 'experience', 'portfolio', 'contact'];
             const scrollPosition = window.scrollY + 100;
-            
+
             // Cambiar apariencia del navbar basado en scroll
             setScrolled(window.scrollY > 50);
 
@@ -72,7 +72,7 @@ const NavBar = () => {
                                 <div className="w-5 h-5 transition-transform duration-300 group-hover:scale-110">
                                     {item.icon}
                                 </div>
-                                
+
                                 {/* Tooltip */}
                                 <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 
                                               px-3 py-1 bg-black/90 text-white text-xs rounded-lg opacity-0 
@@ -140,7 +140,7 @@ const NavBar = () => {
 
             {/* Mobile Menu Overlay */}
             {isMobileMenuOpen && (
-                <div 
+                <div
                     className="fixed inset-0 bg-black/50 z-40 lg:hidden"
                     onClick={() => setIsMobileMenuOpen(false)}
                 />

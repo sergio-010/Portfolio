@@ -55,17 +55,17 @@ const EducationSection = () => {
                                         {item.period}
                                     </div>
                                 </div>
-                                
+
                                 <h3 className="text-xl text-white font-light mb-2">
                                     {item.title}
                                 </h3>
-                                
+
                                 <p className="text-yellow-600 font-medium mb-4">
                                     {item.institution}
                                 </p>
-                                
+
                                 <div className="w-16 h-px bg-yellow-600/50 mb-4"></div>
-                                
+
                                 <p className="text-base text-white/80 leading-relaxed">
                                     {item.description}
                                 </p>
@@ -79,13 +79,13 @@ const EducationSection = () => {
                             <h3 className="text-3xl font-light text-white mb-4">Idiomas</h3>
                             <div className="w-16 h-px bg-yellow-600 mx-auto"></div>
                         </div>
-                        
+
                         <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
                             <div className="bg-white/5 backdrop-blur-xl border border-yellow-600/20 rounded-lg p-8 text-center hover:scale-[1.02] transition-all duration-300">
                                 <h4 className="text-xl text-yellow-600 font-light mb-2">Español</h4>
                                 <p className="text-white/80">Nativo</p>
                             </div>
-                            
+
                             <div className="bg-white/5 backdrop-blur-xl border border-yellow-600/20 rounded-lg p-8 text-center hover:scale-[1.02] transition-all duration-300">
                                 <h4 className="text-xl text-yellow-600 font-light mb-2">Inglés</h4>
                                 <p className="text-white/80">Nivel B1</p>

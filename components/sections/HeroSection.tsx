@@ -25,8 +25,8 @@ const HeroSection = () => {
                                 </div>
 
                                 <p className="text-lg text-white/85 max-w-2xl leading-relaxed font-light mx-auto">
-                                    Desarrollador frontend especializado en React y Next.js con experiencia en diseño 
-                                    y desarrollo de interfaces de usuario eficientes. Creando soluciones web modernas 
+                                    Desarrollador frontend especializado en React y Next.js con experiencia en diseño
+                                    y desarrollo de interfaces de usuario eficientes. Creando soluciones web modernas
                                     que combinan funcionalidad técnica con excelencia estética.
                                 </p>
                             </div>
