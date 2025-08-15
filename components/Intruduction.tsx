@@ -3,27 +3,42 @@ import Image from "next/image";
 
 const Introduction = () => {
     return (
-        <div className="h-[700px] w-full z-20 ">
+        <div className="min-h-screen flex items-center justify-center px-6">
+            <div className="max-w-4xl w-full">
+                <div className="text-center space-y-8">
+                    <div className="space-y-4">
+                        <h1 className="text-minimal-4xl md:text-6xl font-light text-minimal-text tracking-tight">
+                            Sergio Picon
+                        </h1>
+                        <div className="w-16 h-px bg-minimal-text mx-auto"></div>
+                        <p className="text-minimal-lg text-minimal-gray max-w-2xl mx-auto font-light">
+                            Frontend Developer
+                        </p>
+                    </div>
 
-            <div className="max-w-6xl gap-6 mx-auto h-[700px] z-20 grid items-center align-center justify-center p-6  md:py-0 md:grid-cols-2 ">
-
-                <Image src="/Devs.svg" alt="image" width={500} height={200} className="align-center" />
-                <div className="flex flex-col justify-center mx-auto max-w-md">
-                    <h1 className="mb-5 text-2xl leading-tight text-center
-                     md:text-left md:text-5xl md:mb-10 ">
-                        I Am <span className="text-blue-600">Sergio Picon</span>
-                    </h1>
-                    <p className="mx-auto mb-2 text-xl md:mx-0 md:mb-8 text-left">Hello, I am a frontend developer passionate about creating
-                        modern and dynamic web applications. Specialized in frontend technologies and frameworks like React and Next.js.
-                        I am enthusiastic about solving problems and optimizing the user experience.
-
+                    <p className="text-minimal-base text-minimal-gray max-w-xl mx-auto leading-relaxed">
+                        Creating modern and dynamic web applications with React and Next.js.
+                        Passionate about solving problems and optimizing user experience.
                     </p>
-                    <div className="flex items-center justify-center gap-1 md:justify-start md:gap-5">
-                        <a href="/CV-Picon Sergio Andres.pdf" download="cv" className="px-3 py-2 transition-all duration-300 cursor-pointer
-                         text-md rounded-xl hover:shadow-lg border border-blue-600 hover:shadow-blue-600/50">Download cv</a>
-                        <a href="/contact-me" className="px-3 py-2 transition-all duration-300 cursor-pointer
-                         text-md rounded-xl hover:shadow-lg border border-blue-600 hover:shadow-blue-600/50">Contact me</a>
 
+                    <div className="flex items-center justify-center gap-8 pt-8">
+                        <a
+                            href="/CV-Picon Sergio Andres.pdf"
+                            download="cv"
+                            className="text-minimal-sm text-minimal-text hover:text-minimal-accent 
+                                     border-b border-transparent hover:border-minimal-accent 
+                                     transition-all duration-300 tracking-wide uppercase"
+                        >
+                            Download CV
+                        </a>
+                        <a
+                            href="/contact-me"
+                            className="text-minimal-sm text-minimal-text hover:text-minimal-accent 
+                                     border-b border-transparent hover:border-minimal-accent 
+                                     transition-all duration-300 tracking-wide uppercase"
+                        >
+                            Contact
+                        </a>
                     </div>
                 </div>
             </div>

@@ -1,22 +1,23 @@
 import CointanerPage from "@/components/ContainerPage";
-
 import TransitionPage from "@/components/TransitionPage";
-
 import CounterServices from './components/CounterSwervices';
-
 import TimeLine from "./components/Timeline";
 
 const PageAboutMe = () => {
     return (
         <>
             <TransitionPage />
-            <CointanerPage  >
-                <h1 className="text-4xl font-bold leading-tight text-center  md:mt-10">
-                    My
-                    <span className="text-blue-600"> career</span>
-                </h1>
-                <CounterServices />
-                <TimeLine />
+            <CointanerPage>
+                <div className="pt-20 pb-16">
+                    <div className="text-center mb-16">
+                        <h1 className="text-minimal-3xl md:text-minimal-4xl font-light text-minimal-text tracking-wide mb-4">
+                            About Me
+                        </h1>
+                        <div className="w-16 h-px bg-minimal-text mx-auto"></div>
+                    </div>
+                    <CounterServices />
+                    <TimeLine />
+                </div>
             </CointanerPage>
         </>
     );

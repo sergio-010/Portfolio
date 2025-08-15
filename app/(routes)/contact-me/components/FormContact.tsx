@@ -3,44 +3,66 @@ const FormContact = () => {
         <form
             action="https://formsubmit.co/adb4e749bcbf0b1783ee75ed6dffb0dd"
             method="POST"
-            className="max-w-3xl flex flex-col gap-6 mx-auto align-center mt-20 "
+            className="space-y-6 mt-12"
         >
-            <div className="flex justify-between gap-9">
-                <label htmlFor="name">Name</label>
+            <div className="space-y-2">
+                <label htmlFor="name" className="block text-minimal-sm text-minimal-gray uppercase tracking-wide">
+                    Name
+                </label>
                 <input
                     type="text"
                     id="name"
                     name="name"
-                    className="w-full bg-transparent border rounded-lg hover:shadow-lg hover:shadow-blue-600/50 border-blue-600"
+                    className="w-full px-0 py-3 bg-transparent border-0 border-b border-minimal-border 
+                             text-minimal-text placeholder-minimal-gray focus:border-minimal-text 
+                             focus:outline-none transition-colors"
                     required
                     autoComplete="name"
                 />
             </div>
-            <div className="flex justify-between gap-10">
-                <label htmlFor="email">Email</label>
+
+            <div className="space-y-2">
+                <label htmlFor="email" className="block text-minimal-sm text-minimal-gray uppercase tracking-wide">
+                    Email
+                </label>
                 <input
                     type="email"
                     id="email"
                     name="email"
-                    className="w-full bg-transparent border rounded-lg hover:shadow-lg hover:shadow-blue-600/50hover:shadow-lg hover:shadow-blue-600/50 border-blue-600"
+                    className="w-full px-0 py-3 bg-transparent border-0 border-b border-minimal-border 
+                             text-minimal-text placeholder-minimal-gray focus:border-minimal-text 
+                             focus:outline-none transition-colors"
                     required
                     autoComplete="email"
                 />
             </div>
-            <div className="flex gap-4 justify-between">
-                <label htmlFor="comments">Message</label>
+
+            <div className="space-y-2">
+                <label htmlFor="comments" className="block text-minimal-sm text-minimal-gray uppercase tracking-wide">
+                    Message
+                </label>
                 <textarea
                     id="comments"
                     name="comments"
-                    className="w-full bg-transparent border rounded-lg hover:shadow-lg hover:shadow-blue-600/50 border-blue-600"
+                    rows={4}
+                    className="w-full px-0 py-3 bg-transparent border-0 border-b border-minimal-border 
+                             text-minimal-text placeholder-minimal-gray focus:border-minimal-text 
+                             focus:outline-none transition-colors resize-none"
                     required
                 />
             </div>
-            <input
-                type="submit"
-                value="Send"
-                className="w-[200px] mx-auto mt-4 py-2 rounded-lg shadow border border-blue-600 cursor-pointer hover:shadow-lg hover:shadow-blue-600/50 text-white mb-40 md:mb-0"
-            />
+
+            <div className="pt-6">
+                <button
+                    type="submit"
+                    className="text-minimal-sm text-minimal-text hover:text-minimal-accent 
+                             border-b border-transparent hover:border-minimal-accent 
+                             transition-all duration-300 tracking-wide uppercase"
+                >
+                    Send Message
+                </button>
+            </div>
+
             <input type="hidden" name="_next" value="https://sergio-picon.vercel.app/" />
             <input type="hidden" name="_captcha" value="false" />
         </form>

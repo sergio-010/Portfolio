@@ -1,16 +1,14 @@
 import type { Metadata } from "next";
-import { Urbanist } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import NavBar from "../components/NavBar";
 import Header from "@/components/Header";
-import CoverParticles from "@/components/CoveParticles";
 
-
-const urbanist = Urbanist({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], weight: ["300", "400", "500"] });
 
 export const metadata: Metadata = {
-  title: "SergioDev",
-  description: "Sergio Dev Portfolio",
+  title: "Sergio Picon - Frontend Developer",
+  description: "Frontend Developer specializing in React and Next.js. Creating modern and dynamic web applications.",
 };
 
 export default function RootLayout({
@@ -19,14 +17,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <head>
         <link rel="icon" href="favi.png" />
       </head>
-      <body className={urbanist.className}>
-        <NavBar />
+      <body className={inter.className}>
         <Header />
-        <CoverParticles />
+        <NavBar />
         {children}
       </body>
     </html>

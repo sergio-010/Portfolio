@@ -45,92 +45,101 @@ interface PortfolioData {
 }
 
 export const socialNetworks: SocialNetwork[] = [
-
     {
         id: 2,
-        logo: <LinkedinIcon size={30} strokeWidth={1} />,
+        logo: <LinkedinIcon size={20} strokeWidth={1.5} />,
         src: "https://www.linkedin.com/in/sergio-picon/",
     },
     {
         id: 4,
-        logo: <Github size={30} strokeWidth={1} />,
+        logo: <Github size={20} strokeWidth={1.5} />,
         src: "https://github.com/sergio-010",
     },
-
 ];
 
 
 export const itemsNavbar: NavbarItem[] = [
     {
         id: 1,
-        title: "Home",
-        icon: <HomeIcon size={25} color="#fff" strokeWidth={1} />,
-        link: "/",
+        title: "Inicio",
+        icon: <HomeIcon size={20} strokeWidth={1.5} />,
+        link: "#home",
     },
     {
         id: 2,
-        title: "User",
-        icon: <UserRound size={25} color="#fff" strokeWidth={1} />,
-        link: "/about-me",
+        title: "Sobre Mí",
+        icon: <UserRound size={20} strokeWidth={1.5} />,
+        link: "#about",
     },
-
+    {
+        id: 3,
+        title: "Educación",
+        icon: <Book size={20} strokeWidth={1.5} />,
+        link: "#education",
+    },
     {
         id: 4,
-        title: "Target",
-        icon: <CodeSquare size={25} color="#fff" strokeWidth={1} />,
-        link: "/portfolio",
+        title: "Experiencia",
+        icon: <BookText size={20} strokeWidth={1.5} />,
+        link: "#experience",
     },
     {
         id: 5,
-        title: "Home",
-        icon: <MessageCircleCode size={25} color="#fff" strokeWidth={1} />,
-        link: "/contact-me",
+        title: "Portafolio",
+        icon: <CodeSquare size={20} strokeWidth={1.5} />,
+        link: "#portfolio",
+    },
+    {
+        id: 6,
+        title: "Contacto",
+        icon: <MessageCircleCode size={20} strokeWidth={1.5} />,
+        link: "#contact",
     },
 ];
 
 export const dataAboutPage: AboutPageData[] = [
     {
+        id: 1,
+        title: "Creadora de contenido",
+        subtitle: "Ant Pack (Remoto)",
+        description: "Trabajé como desarrollador frontend junior, participando en varios proyectos desde el concepto inicial hasta su realización concreta. Desarrollé soluciones utilizando React y frameworks como Next.js, enfocándome en la creación de interfaces de usuario eficientes.",
+        date: "2023 - 2024",
+    },
+    {
         id: 2,
-        title: "Computer Science Teacher",
+        title: "Profesor de Informática", 
         subtitle: "Colegio Rafael Pombo",
-        description: "I am currently a teacher of Technology and Computer Science at the Colegio Rafael Pombo .",
-        date: "Abr 2024",
+        description: "Actualmente soy profesor de Tecnología e Informática, desarrollando habilidades pedagógicas y compartiendo conocimientos en tecnología con estudiantes.",
+        date: "2024 - Presente",
     },
     {
         id: 3,
-        title: "Systems Engineer Graduation",
-        subtitle: "UNISANGIL",
-        description: "Graduated in Systems Engineering from Unisangil University.",
-        date: "Abr 2024 ",
-    },
-    {
-        id: 4,
-        title: "Frontend Developer",
-        subtitle: "Ant Pack",
-        description: "I worked as a frontend developer at Ant Pack, where I used React and Next.js to build efficient and scalable web applications.",
-        date: "Oct 2023",
+        title: "Graduación Ingeniería de Sistemas",
+        subtitle: "Fundación Universitaria UNISANGIL",
+        description: "Graduado en Ingeniería de Sistemas de la Fundación Universitaria UNISANGIL con enfoque en desarrollo web moderno y tecnologías frontend.",
+        date: "2018 - 2024",
     },
 ]
 
 export const dataCounter: CounterData[] = [
     {
         id: 0,
-        endCounter: 6,
-        text: "Months of experience",
+        endCounter: 1,
+        text: "Años de experiencia",
         lineRight: true,
         lineRightMobile: true,
     },
     {
         id: 1,
-        endCounter: 4,
-        text: "Satisfied customers",
+        endCounter: 5,
+        text: "Proyectos completados",
         lineRight: true,
         lineRightMobile: false,
     },
     {
         id: 2,
-        endCounter: 8,
-        text: "Completed projects",
+        endCounter: 2,
+        text: "Tecnologías dominadas",
         lineRight: true,
         lineRightMobile: false,
     },
@@ -226,9 +235,9 @@ export const dataPortfolio: PortfolioData[] = [
 export const dataContact = [
     {
         id: 1,
-        title: "Telephone",
+        title: "Teléfono",
         subtitle: "+57 320 34 39 111",
-        link: "https://api.whatsapp.com/send?phone=573203439111&text=Holaaaa",
+        link: "https://api.whatsapp.com/send?phone=573203439111&text=Hola",
         icon: <Phone />,
     },
     {
@@ -240,9 +249,16 @@ export const dataContact = [
     },
     {
         id: 3,
-        title: "Email",
-        subtitle: "piconsergio010@gmail",
-        link: "piconsergio010@gmail.com",
+        title: "Correo",
+        subtitle: "piconsergio010@gmail.com",
+        link: "mailto:piconsergio010@gmail.com",
         icon: <MailCheck />,
+    },
+    {
+        id: 4,
+        title: "Ubicación",
+        subtitle: "Colombia",
+        link: "#",
+        icon: <MessageCircle />,
     },
 ];
