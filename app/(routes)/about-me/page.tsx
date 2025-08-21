@@ -2,6 +2,7 @@ import CointanerPage from "@/components/ContainerPage";
 import TransitionPage from "@/components/TransitionPage";
 import CounterServices from './components/CounterSwervices';
 import TimeLine from "./components/Timeline";
+import ProfileSection from "./components/ProfileSection";
 
 const PageAboutMe = () => {
     return (
@@ -15,8 +16,17 @@ const PageAboutMe = () => {
                         </h1>
                         <div className="w-16 h-px bg-minimal-text mx-auto"></div>
                     </div>
+                    <ProfileSection />
                     <CounterServices />
-                    <TimeLine />
+                    <div className="mt-20">
+                        <div className="text-center mb-12">
+                            <h2 className="text-minimal-2xl md:text-minimal-3xl font-light text-minimal-text tracking-wide mb-4">
+                                Experiencia y Educación
+                            </h2>
+                            <div className="w-16 h-px bg-minimal-text mx-auto"></div>
+                        </div>
+                        <TimeLine />
+                    </div>
                 </div>
             </CointanerPage>
         </>

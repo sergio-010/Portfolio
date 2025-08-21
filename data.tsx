@@ -100,47 +100,68 @@ export const itemsNavbar: NavbarItem[] = [
 export const dataAboutPage: AboutPageData[] = [
     {
         id: 1,
-        title: "Creadora de contenido",
-        subtitle: "Ant Pack (Remoto)",
-        description: "Trabajé como desarrollador frontend junior, participando en varios proyectos desde el concepto inicial hasta su realización concreta. Desarrollé soluciones utilizando React y frameworks como Next.js, enfocándome en la creación de interfaces de usuario eficientes.",
-        date: "2023 - 2024",
+        title: "Desarrollador Frontend",
+        subtitle: "Evalua (Remoto)",
+        description: "Desarrollo de funcionalidades interactivas y módulos complejos con React y Next.js. Implementación de herramientas de análisis, visualización de datos y dashboards. Colaboración en proyectos educativos y de gestión, priorizando el rendimiento y la experiencia de usuario. Integración con APIs, control de versiones con Git y trabajo en equipos multidisciplinarios ágiles.",
+        date: "Mayo 2024 - Actualidad",
     },
     {
         id: 2,
-        title: "Profesor de Informática",
-        subtitle: "Colegio Rafael Pombo",
-        description: "Actualmente soy profesor de Tecnología e Informática, desarrollando habilidades pedagógicas y compartiendo conocimientos en tecnología con estudiantes.",
-        date: "2024 - Presente",
+        title: "Desarrollador Frontend",
+        subtitle: "Vaseprint (Remoto)",
+        description: "Diseñé y desarrollé componentes reutilizables y escalables de UI utilizando React, Next.js, Tailwind CSS y shadcn/ui. Implementé interfaces responsivas, minimalistas y accesibles. Integré APIs y servicios usando Node.js, NestJS y Prisma. Apliqué mejoras de rendimiento y configuré entornos con Docker.",
+        date: "Marzo 2024 - Mayo 2025",
     },
     {
         id: 3,
+        title: "Desarrollador Frontend",
+        subtitle: "Ant Pack (Remoto)",
+        description: "Participé como desarrollador frontend junior en diversos proyectos, desde la fase de diseño hasta su implementación final. Desarrollé componentes reutilizables y funcionalidades basadas en principios de UX/UI. Optimicé el rendimiento para mejorar la experiencia del usuario y colaboré estrechamente con diseñadores y desarrolladores.",
+        date: "Octubre 2023 - Febrero 2024",
+    },
+    {
+        id: 4,
         title: "Graduación Ingeniería de Sistemas",
         subtitle: "Fundación Universitaria UNISANGIL",
-        description: "Graduado en Ingeniería de Sistemas de la Fundación Universitaria UNISANGIL con enfoque en desarrollo web moderno y tecnologías frontend.",
+        description: "Graduado en Ingeniería de Sistemas con enfoque en desarrollo web moderno y tecnologías frontend. Especializado en la creación de soluciones tecnológicas de alto rendimiento.",
         date: "2018 - 2024",
+    },
+    {
+        id: 5,
+        title: "Diplomado",
+        subtitle: "Desarrollo de software, redes y ciberseguridad",
+        description: "Completé un diplomado especializado en desarrollo de software, redes y ciberseguridad, ampliando mis conocimientos en seguridad informática y arquitectura de sistemas.",
+        date: "2023",
     },
 ]
 
 export const dataCounter: CounterData[] = [
     {
         id: 0,
-        endCounter: 1,
+        endCounter: 2,
         text: "Años de experiencia",
         lineRight: true,
         lineRightMobile: true,
     },
     {
         id: 1,
-        endCounter: 5,
+        endCounter: 10,
         text: "Proyectos completados",
         lineRight: true,
         lineRightMobile: false,
     },
     {
         id: 2,
-        endCounter: 2,
+        endCounter: 8,
         text: "Tecnologías dominadas",
         lineRight: true,
+        lineRightMobile: false,
+    },
+    {
+        id: 3,
+        endCounter: 3,
+        text: "Empresas colaboradas",
+        lineRight: false,
         lineRightMobile: false,
     },
 
@@ -148,29 +169,29 @@ export const dataCounter: CounterData[] = [
 
 export const serviceData: ServiceData[] = [
     {
-        icon: <Crop />,
-        title: "Branding",
-        description: "Desarrollo de una identidad de marca sólida y coherente, incluyendo diseño de logotipo, colores y elementos visuales",
+        icon: <Computer />,
+        title: "Desarrollo Frontend",
+        description: "Especializado en React, Next.js y tecnologías modernas para crear interfaces de usuario eficientes y escalables",
     },
     {
         icon: <Pencil />,
-        title: "Diseño web",
-        description: "Diseño creativo y profesional de interfaces web intuitivas y atractivas, centradas en la experiencia del usuario",
-    },
-    {
-        icon: <Computer />,
-        title: "Desarrollo web",
-        description: "Diseño y desarrollo de sitios web a medida, adaptados a tus necesidades",
-    },
-    {
-        icon: <Book />,
-        title: "Copywriting",
-        description: "Creación de contenido persuasivo y atractivo que capta la atención de tu audiencia",
+        title: "Diseño UI/UX",
+        description: "Diseño de interfaces responsivas, minimalistas y accesibles utilizando Tailwind CSS y principios de UX/UI",
     },
     {
         icon: <Rocket />,
-        title: "SEO",
-        description: "Optimización de tu presencia en línea mediante estrategias de SEO avanzadas, ",
+        title: "Optimización de Rendimiento",
+        description: "Mejora del rendimiento de aplicaciones web y optimización de la experiencia del usuario",
+    },
+    {
+        icon: <Book />,
+        title: "Integración de APIs",
+        description: "Integración de servicios backend utilizando Node.js, NestJS y Prisma para aplicaciones completas",
+    },
+    {
+        icon: <Crop />,
+        title: "Componentes Reutilizables",
+        description: "Desarrollo de componentes escalables y reutilizables siguiendo las mejores prácticas de desarrollo",
     },
 ];
 
