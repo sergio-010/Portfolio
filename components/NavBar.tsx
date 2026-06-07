@@ -1,152 +1,199 @@
 'use client'
-import { useState, useEffect } from 'react';
-import { itemsNavbar } from '../data';
-import { Menu, X } from 'lucide-react';
+
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { motion, AnimatePresence } from "motion/react";
+import { EASE } from "@/components/motion";
+import { useContent } from "@/components/LocaleProvider";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const NavBar = () => {
-    const [activeSection, setActiveSection] = useState('home');
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const { nav, site, switchTo } = useContent();
+    const [activeSection, setActiveSection] = useState("home");
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
+        const sections = nav.links.map((link) => link.href.replace("#", ""));
+
         const handleScroll = () => {
-            const sections = ['home', 'about', 'education', 'experience', 'portfolio', 'contact'];
-            const scrollPosition = window.scrollY + 100;
+            setScrolled(window.scrollY > 40);
 
-            // Cambiar apariencia del navbar basado en scroll
-            setScrolled(window.scrollY > 50);
-
+            const scrollPosition = window.scrollY + 120;
             for (const section of sections) {
                 const element = document.getElementById(section);
-                if (element) {
-                    const offsetTop = element.offsetTop;
-                    const offsetHeight = element.offsetHeight;
+                if (!element) continue;
 
-                    if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-                        setActiveSection(section);
-                        break;
-                    }
+                const { offsetTop, offsetHeight } = element;
+                if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+                    setActiveSection(section);
+                    break;
                 }
             }
         };
 
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+        handleScroll();
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [nav.links]);
 
-    const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, link: string) => {
+    // Lock body scroll while the mobile menu is open
+    useEffect(() => {
+        document.body.style.overflow = isMenuOpen ? "hidden" : "";
+        return () => {
+            document.body.style.overflow = "";
+        };
+    }, [isMenuOpen]);
+
+    const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
         e.preventDefault();
-        const targetId = link.replace('#', '');
-        const element = document.getElementById(targetId);
-
-        if (element) {
-            element.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start',
-            });
-        }
-        setIsMobileMenuOpen(false);
+        const element = document.getElementById(href.replace("#", ""));
+        element?.scrollIntoView({ behavior: "smooth", block: "start" });
+        setIsMenuOpen(false);
     };
+
+    const city = site.location.split("—")[0].trim();
 
     return (
         <>
-            {/* Desktop Navigation - Floating Bar */}
-            <nav className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50 hidden lg:block">
-                <div className="flex items-center gap-1 px-6 py-3 bg-black/80 backdrop-blur-xl 
-                              border border-yellow-600/20 rounded-full shadow-2xl">
-                    {itemsNavbar.map((item) => {
-                        const sectionId = item.link.replace('#', '');
-                        const isActive = activeSection === sectionId;
-
-                        return (
-                            <a
-                                key={item.id}
-                                href={item.link}
-                                onClick={(e) => handleClick(e, item.link)}
-                                className={`group relative p-3 rounded-full transition-all duration-300 hover:scale-110
-                                          ${isActive
-                                        ? 'bg-yellow-600 text-black shadow-lg shadow-yellow-600/25'
-                                        : 'text-white/70 hover:text-yellow-600 hover:bg-yellow-600/10'}`}
-                                title={item.title}
-                            >
-                                <div className="w-5 h-5 transition-transform duration-300 group-hover:scale-110">
-                                    {item.icon}
-                                </div>
-
-                                {/* Tooltip */}
-                                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 
-                                              px-3 py-1 bg-black/90 text-white text-xs rounded-lg opacity-0 
-                                              group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap
-                                              border border-yellow-600/20">
-                                    {item.title}
-                                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 
-                                                  w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent 
-                                                  border-t-black/90"></div>
-                                </div>
-                            </a>
-                        );
-                    })}
-                </div>
-            </nav>
-
-            {/* Mobile Navigation - Top Bar */}
-            <nav className={`fixed top-0 left-0 right-0 z-50 lg:hidden transition-all duration-300
-                           ${scrolled ? 'bg-black/95 backdrop-blur-xl border-b border-yellow-600/20' : 'bg-transparent'}`}>
-                <div className="flex items-center justify-between px-6 py-4">
-                    {/* Logo */}
-                    <div className="text-white font-bold text-xl">
-                        <span className="text-yellow-600">S</span>ergio
-                    </div>
-
-                    {/* Mobile Menu Button */}
-                    <button
-                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        className="p-2 text-white hover:text-yellow-600 transition-colors duration-300"
+            <motion.header
+                initial={{ y: -80, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 1, delay: 0.4, ease: EASE }}
+                className={`fixed inset-x-0 top-0 z-50 transition-colors duration-500
+                          ${scrolled && !isMenuOpen
+                        ? "border-b border-line bg-background/80 backdrop-blur-md"
+                        : "border-b border-transparent bg-transparent"}`}
+            >
+                <nav className="mx-auto flex max-w-content items-center justify-between px-6 py-5 lg:px-10">
+                    <a
+                        href="#home"
+                        onClick={(e) => handleClick(e, "#home")}
+                        className="font-serif text-xl tracking-wide text-foreground"
                     >
-                        {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-                    </button>
-                </div>
+                        Sergio Picón<span className="text-accent">.</span>
+                    </a>
 
-                {/* Mobile Menu */}
-                {isMobileMenuOpen && (
-                    <div className="absolute top-full left-0 right-0 bg-black/95 backdrop-blur-xl 
-                                  border-b border-yellow-600/20 shadow-2xl">
-                        <div className="flex flex-col space-y-2 p-6">
-                            {itemsNavbar.map((item) => {
-                                const sectionId = item.link.replace('#', '');
-                                const isActive = activeSection === sectionId;
+                    {/* Desktop links */}
+                    <div className="hidden items-center gap-8 lg:flex">
+                        <ul className="flex items-center gap-8">
+                            {nav.links.map((link) => {
+                                const isActive = activeSection === link.href.replace("#", "");
 
                                 return (
-                                    <a
-                                        key={item.id}
-                                        href={item.link}
-                                        onClick={(e) => handleClick(e, item.link)}
-                                        className={`flex items-center gap-3 p-3 rounded-lg transition-all duration-300
-                                                  ${isActive
-                                                ? 'bg-yellow-600 text-black'
-                                                : 'text-white/80 hover:text-yellow-600 hover:bg-yellow-600/10'}`}
-                                    >
-                                        <div className="w-5 h-5">
-                                            {item.icon}
-                                        </div>
-                                        <span className="font-medium">{item.title}</span>
-                                    </a>
+                                    <li key={link.href} className="relative">
+                                        <a
+                                            href={link.href}
+                                            onClick={(e) => handleClick(e, link.href)}
+                                            className={`text-xs uppercase tracking-[0.2em] transition-colors duration-300
+                                                      ${isActive ? "text-foreground" : "text-muted hover:text-foreground"}`}
+                                        >
+                                            {link.title}
+                                        </a>
+                                        {isActive && (
+                                            <motion.span
+                                                layoutId="nav-indicator"
+                                                transition={{ duration: 0.5, ease: EASE }}
+                                                className="absolute -bottom-2 left-0 h-px w-full bg-accent"
+                                            />
+                                        )}
+                                    </li>
                                 );
                             })}
+                        </ul>
+
+                        <div className="flex items-center gap-4 border-l border-line pl-8">
+                            <Link
+                                href={switchTo.href}
+                                aria-label={switchTo.ariaLabel}
+                                className="text-xs uppercase tracking-[0.2em] text-muted transition-colors duration-300 hover:text-foreground"
+                            >
+                                {switchTo.label}
+                            </Link>
+                            <ThemeToggle />
                         </div>
                     </div>
-                )}
-            </nav>
 
-            {/* Mobile Menu Overlay */}
-            {isMobileMenuOpen && (
-                <div
-                    className="fixed inset-0 bg-black/50 z-40 lg:hidden"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                />
-            )}
+                    {/* Mobile: language + theme + menu button */}
+                    <div className="flex items-center gap-3 lg:hidden">
+                        <Link
+                            href={switchTo.href}
+                            aria-label={switchTo.ariaLabel}
+                            className="text-xs uppercase tracking-[0.2em] text-muted transition-colors duration-300 hover:text-foreground"
+                        >
+                            {switchTo.label}
+                        </Link>
+                        <ThemeToggle />
+                        <button
+                            onClick={() => setIsMenuOpen(!isMenuOpen)}
+                            aria-label={isMenuOpen ? nav.closeMenu : nav.openMenu}
+                            aria-expanded={isMenuOpen}
+                            className="relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-1.5"
+                        >
+                            <motion.span
+                                animate={isMenuOpen ? { rotate: 45, y: 4 } : { rotate: 0, y: 0 }}
+                                className="h-px w-6 bg-foreground"
+                            />
+                            <motion.span
+                                animate={isMenuOpen ? { rotate: -45, y: -3 } : { rotate: 0, y: 0 }}
+                                className="h-px w-6 bg-foreground"
+                            />
+                        </button>
+                    </div>
+                </nav>
+            </motion.header>
+
+            {/* Mobile full-screen menu */}
+            <AnimatePresence>
+                {isMenuOpen && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.4, ease: EASE }}
+                        className="fixed inset-0 z-40 flex flex-col justify-center bg-background px-8 lg:hidden"
+                    >
+                        <motion.ul
+                            initial="hidden"
+                            animate="visible"
+                            variants={{ visible: { transition: { staggerChildren: 0.07, delayChildren: 0.15 } } }}
+                            className="space-y-2"
+                        >
+                            {nav.links.map((link) => (
+                                <motion.li
+                                    key={link.href}
+                                    variants={{
+                                        hidden: { opacity: 0, y: 28 },
+                                        visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE } },
+                                    }}
+                                >
+                                    <a
+                                        href={link.href}
+                                        onClick={(e) => handleClick(e, link.href)}
+                                        className={`font-serif text-5xl transition-colors duration-300
+                                                  ${activeSection === link.href.replace("#", "")
+                                                ? "text-accent"
+                                                : "text-foreground"}`}
+                                    >
+                                        {link.title}
+                                    </a>
+                                </motion.li>
+                            ))}
+                        </motion.ul>
+
+                        <motion.p
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.6, duration: 0.6 }}
+                            className="absolute bottom-10 left-8 text-xs uppercase tracking-[0.3em] text-muted"
+                        >
+                            {city} — {new Date().getFullYear()}
+                        </motion.p>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </>
     );
-}
+};
 
 export default NavBar;

@@ -9,16 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@react-three/fiber": "^8.2.2",
-    "@tsparticles/react": "^3.0.0",
-    "@tsparticles/slim": "^3.4.0",
-    "framer-motion-3d": "^11.2.0",
     "lucide-react": "^0.396.0",
+    "motion": "^12.40.0",
     "next": "14.2.4",
+    "next-themes": "^0.4.6",
     "react": "^18",
-    "react-countup": "^6.5.3",
-    "react-dom": "^18",
-    "three": "^0.137.0"
+    "react-dom": "^18"
   },
   "devDependencies": {
     "@types/node": "^20",

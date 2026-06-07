@@ -1,135 +1,146 @@
-import { dataContact } from "@/data";
+'use client'
+
+import SectionHeader from "@/components/SectionHeader";
+import { Reveal, Stagger, StaggerItem } from "@/components/motion";
+import { useContent } from "@/components/LocaleProvider";
+
+const inputClasses =
+    "w-full border-b border-line bg-transparent py-4 text-foreground placeholder:text-muted/50 transition-colors duration-300 focus:border-accent focus:outline-none";
 
 const ContactSection = () => {
+    const { contact, site } = useContent();
+
     return (
-        <section id="contact" className="py-20 bg-black relative">
-            <div className="container mx-auto px-6">
-                <div className="max-w-6xl mx-auto">
-                    <div className="text-center mb-20">
-                        <p className="text-yellow-600 font-light text-sm uppercase tracking-[0.3em] mb-6">
-                            Contacto
-                        </p>
-                        <h2 className="text-6xl md:text-7xl font-extralight text-white mb-8">
-                            Creemos Algo
-                            <span className="block text-yellow-600">Increíble</span>
-                        </h2>
-                        <div className="w-20 h-px bg-yellow-600 mx-auto"></div>
-                        <p className="text-base text-white/70 max-w-2xl mx-auto mt-8 leading-relaxed">
-                            ¿Listo para dar vida a tu visión? Hablemos sobre tu próximo proyecto
-                            y creemos algo extraordinario juntos.
-                        </p>
-                    </div>
+        <section id="contact" className="py-28 md:py-40">
+            <div className="mx-auto max-w-content px-6 lg:px-10">
+                <SectionHeader
+                    number="05"
+                    label={contact.label}
+                    title={
+                        <>
+                            {contact.titlePre}{" "}
+                            <span className="italic text-accent">{contact.titleAccent}</span>
+                        </>
+                    }
+                />
 
-                    <div className="grid lg:grid-cols-2 gap-16 items-start">
-                        {/* Contact Information */}
-                        <div className="space-y-8">
-                            <div className="space-y-6">
-                                <h3 className="text-2xl text-white mb-8 font-light">
-                                    Ponte en Contacto
-                                </h3>
+                <div className="grid gap-16 lg:grid-cols-12">
+                    {/* Channels */}
+                    <div className="lg:col-span-5">
+                        <Reveal>
+                            <a
+                                href={`mailto:${site.email}`}
+                                className="link-underline font-serif text-2xl text-foreground md:text-3xl"
+                            >
+                                {site.email}
+                            </a>
+                        </Reveal>
 
-                                {dataContact.map((data) => (
+                        <Stagger className="mt-12 border-t border-line">
+                            {contact.channels.map((channel) => (
+                                <StaggerItem key={channel.label}>
                                     <a
-                                        key={data.id}
-                                        href={data.link}
+                                        href={channel.href}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="bg-white/5 backdrop-blur-xl border border-yellow-600/20 rounded-lg p-6 flex items-center gap-6 hover:scale-[1.02] transition-all duration-300 hover:shadow-lg hover:shadow-yellow-600/10 group"
+                                        className="group flex items-baseline justify-between gap-4 border-b border-line py-5 transition-colors duration-300"
                                     >
-                                        <div className="w-12 h-12 bg-yellow-600/10 rounded-full flex items-center justify-center text-yellow-600 group-hover:bg-yellow-600 group-hover:text-black transition-all duration-300">
-                                            {data.icon}
-                                        </div>
-                                        <div>
-                                            <h4 className="text-white/60 text-sm uppercase tracking-wider mb-1 font-light">
-                                                {data.title}
-                                            </h4>
-                                            <p className="text-white font-medium">
-                                                {data.subtitle}
-                                            </p>
-                                        </div>
+                                        <span className="text-xs uppercase tracking-[0.2em] text-muted">
+                                            {channel.label}
+                                        </span>
+                                        <span className="text-sm text-foreground transition-colors duration-300 group-hover:text-accent">
+                                            {channel.value}
+                                        </span>
                                     </a>
-                                ))}
-                            </div>
-                        </div>
+                                </StaggerItem>
+                            ))}
+                        </Stagger>
+                    </div>
 
-                        {/* Contact Form */}
-                        <div className="bg-white/5 backdrop-blur-xl border border-yellow-600/20 rounded-lg p-10">
-                            <h3 className="text-2xl text-white mb-8 font-light">
-                                Enviar Mensaje
-                            </h3>
-
-                            <form
-                                action="https://formsubmit.co/piconsergio010@gmail.com"
-                                method="POST"
-                                className="space-y-8"
-                            >
-                                <div className="grid md:grid-cols-2 gap-6">
-                                    <div className="space-y-2">
-                                        <label htmlFor="name" className="block text-yellow-600 text-sm uppercase tracking-wider font-light">
-                                            Nombre
-                                        </label>
-                                        <input
-                                            type="text"
-                                            id="name"
-                                            name="name"
-                                            className="w-full px-0 py-4 bg-transparent border-0 border-b border-yellow-600/30
-                                                     text-white placeholder-white/40 focus:border-yellow-600 
-                                                     focus:outline-none transition-colors font-light"
-                                            required
-                                            autoComplete="name"
-                                        />
-                                    </div>
-
-                                    <div className="space-y-2">
-                                        <label htmlFor="email" className="block text-yellow-600 text-sm uppercase tracking-wider font-light">
-                                            Correo
-                                        </label>
-                                        <input
-                                            type="email"
-                                            id="email"
-                                            name="email"
-                                            className="w-full px-0 py-4 bg-transparent border-0 border-b border-yellow-600/30
-                                                     text-white placeholder-white/40 focus:border-yellow-600 
-                                                     focus:outline-none transition-colors font-light"
-                                            required
-                                            autoComplete="email"
-                                        />
-                                    </div>
-                                </div>
-
-                                <div className="space-y-2">
-                                    <label htmlFor="comments" className="block text-yellow-600 text-sm uppercase tracking-wider font-light">
-                                        Mensaje
+                    {/* Form */}
+                    <Reveal delay={0.15} className="lg:col-span-7">
+                        <form
+                            action={`https://formsubmit.co/${site.email}`}
+                            method="POST"
+                            className="space-y-10"
+                        >
+                            <div className="grid gap-10 md:grid-cols-2">
+                                <div>
+                                    <label
+                                        htmlFor="name"
+                                        className="mb-2 block text-xs uppercase tracking-[0.2em] text-muted"
+                                    >
+                                        {contact.form.name}
                                     </label>
-                                    <textarea
-                                        id="comments"
-                                        name="comments"
-                                        rows={6}
-                                        className="w-full px-0 py-4 bg-transparent border-0 border-b border-yellow-600/30
-                                                 text-white placeholder-white/40 focus:border-yellow-600 
-                                                 focus:outline-none transition-colors resize-none font-light"
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
                                         required
+                                        autoComplete="name"
+                                        placeholder={contact.form.namePlaceholder}
+                                        className={inputClasses}
                                     />
                                 </div>
 
-                                <div className="pt-8">
-                                    <button
-                                        type="submit"
-                                        className="bg-yellow-600 text-black px-8 py-4 text-sm uppercase tracking-wider font-medium hover:bg-yellow-500 transition-all duration-300 hover:scale-105 w-full"
+                                <div>
+                                    <label
+                                        htmlFor="email"
+                                        className="mb-2 block text-xs uppercase tracking-[0.2em] text-muted"
                                     >
-                                        Enviar Mensaje
-                                    </button>
+                                        {contact.form.email}
+                                    </label>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        required
+                                        autoComplete="email"
+                                        placeholder={contact.form.emailPlaceholder}
+                                        className={inputClasses}
+                                    />
                                 </div>
+                            </div>
 
-                                <input type="hidden" name="_next" value="https://sergio-picon.vercel.app/" />
-                                <input type="hidden" name="_captcha" value="false" />
-                            </form>
-                        </div>
-                    </div>
+                            <div>
+                                <label
+                                    htmlFor="message"
+                                    className="mb-2 block text-xs uppercase tracking-[0.2em] text-muted"
+                                >
+                                    {contact.form.message}
+                                </label>
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    rows={5}
+                                    required
+                                    placeholder={contact.form.messagePlaceholder}
+                                    className={`${inputClasses} resize-none`}
+                                />
+                            </div>
+
+                            <button
+                                type="submit"
+                                className="group inline-flex items-center gap-3 border border-foreground/20 px-10 py-4 text-xs uppercase tracking-[0.2em] text-foreground transition-colors duration-500 hover:border-accent hover:text-accent"
+                            >
+                                {contact.form.submit}
+                                <span className="transition-transform duration-500 ease-out-expo group-hover:translate-x-1">
+                                    →
+                                </span>
+                            </button>
+
+                            <input
+                                type="hidden"
+                                name="_next"
+                                value="https://sergio-picon.vercel.app/"
+                            />
+                            <input type="hidden" name="_captcha" value="false" />
+                        </form>
+                    </Reveal>
                 </div>
             </div>
         </section>
     );
-}
+};
 
 export default ContactSection;

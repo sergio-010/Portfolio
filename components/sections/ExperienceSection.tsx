@@ -1,60 +1,64 @@
-import { dataAboutPage } from "@/data";
+'use client'
+
+import SectionHeader from "@/components/SectionHeader";
+import { Reveal } from "@/components/motion";
+import { useContent } from "@/components/LocaleProvider";
 
 const ExperienceSection = () => {
+    const { experience } = useContent();
+
     return (
-        <section id="experience" className="py-20 bg-black relative">
-            <div className="container mx-auto px-6">
-                <div className="max-w-5xl mx-auto">
-                    <div className="text-center mb-20">
-                        <p className="text-yellow-600 font-light text-sm uppercase tracking-[0.3em] mb-6">
-                            Experiencia
-                        </p>
-                        <h2 className="text-6xl md:text-7xl font-extralight text-white mb-8">
-                            Trayectoria
-                            <span className="block text-yellow-600">Profesional</span>
-                        </h2>
-                        <div className="w-20 h-px bg-yellow-600 mx-auto"></div>
-                    </div>
+        <section id="experience" className="py-28 md:py-40">
+            <div className="mx-auto max-w-content px-6 lg:px-10">
+                <SectionHeader
+                    number="02"
+                    label={experience.label}
+                    title={
+                        <>
+                            {experience.titlePre}{" "}
+                            <span className="italic text-accent">{experience.titleAccent}</span>
+                        </>
+                    }
+                />
 
-                    <div className="relative">
-                        {/* Timeline line */}
-                        <div className="absolute left-8 top-0 bottom-0 w-px bg-yellow-600/30 hidden md:block"></div>
+                <div className="border-t border-line">
+                    {experience.items.map((job, index) => (
+                        <Reveal key={`${job.company}-${job.period}`} delay={index * 0.08}>
+                            <article className="group grid gap-4 border-b border-line py-10 transition-colors duration-500 md:grid-cols-12 md:gap-8 md:py-12">
+                                <div className="md:col-span-3">
+                                    <p className="text-xs uppercase tracking-[0.2em] text-muted">
+                                        {job.period}
+                                    </p>
+                                </div>
 
-                        <div className="space-y-12">
-                            {dataAboutPage.map((data, index) => (
-                                <div key={data.id} className="relative md:pl-20">
-                                    {/* Timeline dot */}
-                                    <div className="absolute left-6 w-4 h-4 bg-yellow-600 rounded-full border-4 border-black hidden md:block"></div>
-
-                                    <div className="bg-white/5 backdrop-blur-xl border border-yellow-600/20 rounded-lg p-8 hover:scale-[1.02] transition-all duration-300 hover:shadow-lg hover:shadow-yellow-600/10">
-                                        <div className="grid md:grid-cols-4 gap-6">
-                                            <div className="md:col-span-1">
-                                                <div className="text-yellow-600 text-sm uppercase tracking-wider font-light">
-                                                    {data.date}
-                                                </div>
-                                            </div>
-                                            <div className="md:col-span-3 space-y-4">
-                                                <h3 className="text-xl text-white font-light">
-                                                    {data.title}
-                                                </h3>
-                                                <p className="text-yellow-600 font-medium">
-                                                    {data.subtitle}
-                                                </p>
-                                                <div className="w-16 h-px bg-yellow-600/50"></div>
-                                                <p className="text-base text-white/80 leading-relaxed">
-                                                    {data.description}
-                                                </p>
-                                            </div>
-                                        </div>
+                                <div className="md:col-span-9">
+                                    <h3 className="font-serif text-2xl text-foreground transition-colors duration-300 group-hover:text-accent md:text-3xl">
+                                        {job.role}
+                                    </h3>
+                                    <p className="mt-1 text-sm uppercase tracking-[0.15em] text-accent/80">
+                                        {job.company}
+                                    </p>
+                                    <p className="mt-5 max-w-2xl text-sm leading-relaxed text-muted md:text-base">
+                                        {job.description}
+                                    </p>
+                                    <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2">
+                                        {job.stack.map((tech) => (
+                                            <span
+                                                key={tech}
+                                                className="text-xs uppercase tracking-[0.15em] text-muted/70"
+                                            >
+                                                {tech}
+                                            </span>
+                                        ))}
                                     </div>
                                 </div>
-                            ))}
-                        </div>
-                    </div>
+                            </article>
+                        </Reveal>
+                    ))}
                 </div>
             </div>
         </section>
     );
-}
+};
 
 export default ExperienceSection;
